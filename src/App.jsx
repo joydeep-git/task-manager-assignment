@@ -1,13 +1,25 @@
 import React from 'react';
 
-// STYLE
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// COMPONENTS
+import Home from './Components/Pages/Home';
+import Login from './Components/Pages/Login';
+import Registration from './Components/Pages/Registration';
+import Navbar from './Components/Helpers/Navbar';
+import ChangePassword from './Components/Helpers/ChangePassword';
 
 function App() {
-
   return (
-    <div>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/registration' element={<Registration />} />
+        <Route path='/changepassword' element={<ChangePassword />} />
+      </Routes>
+    </BrowserRouter>
   )
 };
 
